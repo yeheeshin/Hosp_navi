@@ -33,7 +33,7 @@
         VALUES (#{username}, #{password}, #{email}, #{phone}, #{role}, #{position})
     </insert>
 
-    <select id="findByEmail" parameterType="String" resultType="com.example.User">
+    <select id="findByEmail" parameterType="String" resultType="com.Hosp.navi.domain.User">
         SELECT * FROM User WHERE email = #{email}
     </select>
 </mapper>

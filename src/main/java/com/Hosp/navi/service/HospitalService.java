@@ -47,4 +47,8 @@ public class HospitalService {
     }
 
 
+    // 모든 병원 가져오기
+    public List<Hospital> findAll() {
+        return hospitalMapper.findAll();
+    }
 }

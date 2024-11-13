@@ -32,4 +32,9 @@
         where hospital_id = #{hospital_id}
     </select>
 
+    <select id="findAll" resultType="com.Hosp.navi.domain.Hospital">
+        select *
+        from hospital
+    </select>
+
 </mapper>

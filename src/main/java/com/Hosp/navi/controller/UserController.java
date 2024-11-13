@@ -1,6 +1,8 @@
 package com.Hosp.navi.controller;
 
+import com.Hosp.navi.domain.Hospital;
 import com.Hosp.navi.domain.User;
+import com.Hosp.navi.service.HospitalService;
 import com.Hosp.navi.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -14,6 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
+    private final HospitalService hospitalService;
 
     @PostMapping("/join")
     public ResponseEntity<String> joinUser(@RequestBody User user){
@@ -23,5 +26,10 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("이미 사용 중인 이메일입니다.");
         }
         return ResponseEntity.status(HttpStatus.CREATED).body("회원가입이 성공적으로 완료되었습니다.");
+    }
+
+    @GetMapping("/hos_list")
+    public List<Hospital> getAllHospitals() {
+        return hospitalService.findAll();
     }
 }

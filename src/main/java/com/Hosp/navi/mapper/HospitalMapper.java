@@ -18,4 +18,7 @@ public interface HospitalMapper {
 
     Hospital findById(Long hospital_id);
 
+    // 모든 병원 가져오기
+    List<Hospital> findAll();
+
 }
