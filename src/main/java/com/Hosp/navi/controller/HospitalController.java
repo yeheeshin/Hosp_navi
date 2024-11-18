@@ -1,7 +1,7 @@
 package com.Hosp.navi.controller;
 
 import com.Hosp.navi.domain.Hospital;
-import com.Hosp.navi.domain.User;
+import com.Hosp.navi.domain.user;
 import com.Hosp.navi.service.HospitalService;
 import com.Hosp.navi.service.UserService;
 import lombok.RequiredArgsConstructor;

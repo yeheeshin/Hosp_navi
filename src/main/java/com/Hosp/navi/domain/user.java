@@ -5,7 +5,7 @@ import com.Hosp.navi.domain.enumType.Role;
 import lombok.Data;
 
 @Data
-public class User {
+public class user {
     private Long user_id;
 
     private String username;
@@ -14,4 +14,6 @@ public class User {
     private String password;
     private Role role;
     private Position position;
+
+    private Long hospital;
 }

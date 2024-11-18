@@ -46,6 +46,11 @@ public class HospitalService {
         return uuId.get(0);
     }
 
+    // 병원 이름으로 검색
+    public Hospital findByName(String hos_name) {
+        return hospitalMapper.findByName(hos_name);
+    }
+
 
     // 모든 병원 가져오기
     public List<Hospital> findAll() {

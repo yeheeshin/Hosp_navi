@@ -1,11 +1,11 @@
 package com.Hosp.navi.mapper;
 
-import com.Hosp.navi.domain.User;
+import com.Hosp.navi.domain.user;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface UserMapper {
-    void saveUser(User user);
+    void saveUser(user user);
 
-    User findByEmail(String email);
+    user findByEmail(String email);
 }

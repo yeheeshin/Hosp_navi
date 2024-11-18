@@ -1,6 +1,6 @@
 package com.Hosp.navi.service;
 
-import com.Hosp.navi.domain.User;
+import com.Hosp.navi.domain.user;
 import com.Hosp.navi.mapper.UserMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,13 +14,13 @@ public class UserService {
 
     // 이메일 중복 체크
      public boolean isEmailDuplicate(String email) {
-         User byEmail = userMapper.findByEmail(email);
+         user byEmail = userMapper.findByEmail(email);
 
          return byEmail != null; // 이메일 존재 : true, 없으면 : false
      }
 
      // 유저 저장
-    public boolean save(User user) {
+    public boolean save(user user) {
         if (!isEmailDuplicate(user.getEmail())) {
             userMapper.saveUser(user);
             return true;

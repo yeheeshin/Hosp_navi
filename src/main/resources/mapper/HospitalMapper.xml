@@ -32,6 +32,12 @@
         where hospital_id = #{hospital_id}
     </select>
 
+    <select id="findByName" resultType="com.Hosp.navi.domain.Hospital">
+        select *
+        from hospital
+        where hos_name = #{hos_name}
+    </select>
+
     <select id="findAll" resultType="com.Hosp.navi.domain.Hospital">
         select *
         from hospital
