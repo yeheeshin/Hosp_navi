@@ -31,4 +31,16 @@ public class UserService {
 
     }
 
+    // login
+    public user userLogin(String email, String password) {
+        user loginUser = userMapper.findByEmailAndPwd(email, password);
+
+        if (loginUser != null) {
+            return loginUser;
+        } else {
+            throw new IllegalStateException("존재하지 않는 회원입니다.");
+        }
+
+    }
+
 }

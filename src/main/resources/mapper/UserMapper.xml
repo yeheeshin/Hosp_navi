@@ -12,4 +12,8 @@
     <select id="findByEmail" resultType="com.Hosp.navi.domain.user">
         select * from "user" where email = #{email}
     </select>
+
+    <select id="findByEmailAndPwd" parameterType="map" resultType="com.Hosp.navi.domain.user">
+        select * from "user" where email = #{email} and password = #{password}
+    </select>
 </mapper>

@@ -12,8 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
@@ -60,5 +60,16 @@ public class UserController {
 
 
         return user;
+    }
+
+    // 로그인
+    @PostMapping("/login")
+    public ResponseEntity<String> loginUser(@RequestBody Map<String, String> requestBody) {
+        String email = requestBody.get("email");
+        String password = requestBody.get("password");
+
+        user user = userService.userLogin(email, password);
+
+        return ResponseEntity.ok("안녕하세요. " + user.getUsername() + "님");
     }
 }
